@@ -2,6 +2,6 @@ import React from 'react'
 
 export default class HelloWorld extends React.Component {
   render () {
-    return <h1>Hello {this.props.name}</h1>
+    return <h2>Hello {this.props.name}</h2>
   }
 }
