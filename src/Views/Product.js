@@ -5,12 +5,12 @@ import Loader from '../Components/Loader'
 
 export default function Product () {
   const { id } = useParams()
+  const url = `https://5f26dc810824d8001655ec9d.mockapi.io/products/${id}`
   const [product, setProduct] = useState({
     loading: false,
     data: null,
     error: false
   })
-  const url = `https://5f26dc810824d8001655ec9d.mockapi.io/products/${id}`
 
   let content = null
 
