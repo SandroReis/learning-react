@@ -5,15 +5,12 @@ export default function ProductCard ({
   product: { name, price, description, images, id }
 }) {
   return (
-    <div className='border mb-4 rounded overflow-hidden'>
-      <Link to={`/products/${id}`}>
-        <div
-          className='w-full h-64 bg-blue bg-cover'
-          style={{
-            backgroundImage: `url('${images[0].imageUrl}')`
-          }}
-        />
-      </Link>
+    <div className='border :max-w-sm mb-4 rounded'>
+      <div className=''>
+        <Link to={`/products/${id}`}>
+          <img className='object-contain' src={images[0].imageUrl} alt={name} />
+        </Link>
+      </div>
       <div className='p-3'>
         <h3 className='font-bold text-xl mb-3'>
           <Link to={`/products/${id}`}>{name}</Link>

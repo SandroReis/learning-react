@@ -43,7 +43,7 @@ export default function Navigation () {
             <animated.div
               key={key}
               style={props}
-              className='p-3 fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow-md'
+              className='p-3 fixed bg-white top-0 left-0 sm:w-4/5 md:w-3/5 lg:w-2/5 h-full z-50 shadow-md'
             >
               <NavigationMenu handleCloseMenu={() => setShowMenu(false)} />
             </animated.div>

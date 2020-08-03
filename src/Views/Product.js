@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../Components/Loader'
 import useAxiosGet from '../Hooks/HttpRequests'
+import PrimaryButton from '../Components/PrimaryButton'
 
 export default function Product () {
   const { id } = useParams()
@@ -21,13 +22,30 @@ export default function Product () {
 
   if (product.data) {
     content = (
-      <div>
-        <h1 className='text-2xl font-bold mb-3'>{product.data.name}</h1>
-        <div>
-          <img src={product.data.images[0].imageUrl} alt={product.data.name} />
+      <div className=''>
+        <h1 className='font-sans text-5xl text-gray-800 text-center mb-4'>
+          {product.data.name}
+        </h1>
+        <div className='flex m-4 flex-col lg:flex-row mr-0'>
+          <img
+            className=' max-w-2xl mb-8 m-auto lg:ml-2 lg:max-w-xl lg:mr-4 shadow-md '
+            src={product.data.images[0].imageUrl}
+            alt={product.data.name}
+          />
+          <div className=''>
+            <h1 className='font-bold text-lg text-green-800'>
+              {product.data.name}
+            </h1>
+            <p className='mt-4 mb-4 md:mb-12 font-sans text-gray-800'>
+              {product.data.description}
+            </p>
+            <span className='mt-2'>Price: R$ {product.data.price}</span>
+            <div className='flex flex-wrap m-2 justify-center'>
+              <PrimaryButton link='buy-page' text='Comprar agora' />
+              <PrimaryButton link='carrinho' text='Adicionar ao carrinho' />
+            </div>
+          </div>
         </div>
-        <div className='font-bold text-xl mb-3'>$ {product.data.price}</div>
-        <div>{product.data.description}</div>
       </div>
     )
   }

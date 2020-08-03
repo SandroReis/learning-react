@@ -20,16 +20,16 @@ export default function Home () {
 
   if (products.data) {
     content = products.data.map((product, key) => (
-      <div key={product.id}>
+      <li key={product.id} className='max-w-full md:max-w-sm  m-auto flex mb-4'>
         <ProductCard product={product} />
-      </div>
+      </li>
     ))
   }
 
   return (
     <div>
       <h1 className='font-bold text-2xl mb-3'>Best Sellers</h1>
-      {content}
+      <ul className='flex flex-wrap'>{content}</ul>
     </div>
   )
 }
