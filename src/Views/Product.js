@@ -26,7 +26,7 @@ export default function Product () {
         <h1 className='font-sans text-5xl text-gray-800 text-center mb-4'>
           {product.data.name}
         </h1>
-        <div className='flex m-4 flex-col lg:flex-row mr-0 max-w-full'>
+        <div className='flex m-4 flex-col lg:flex-row  max-w-full'>
           <img
             className='max-w-full object-contain mb-8 m-auto lg:ml-2 lg:max-w-xl lg:mr-4 shadow-md '
             src={product.data.images[0].imageUrl}
